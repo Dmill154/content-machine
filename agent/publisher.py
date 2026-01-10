@@ -468,9 +468,11 @@ footer {
             shutil.rmtree(self.output_dir)
         self.output_dir.mkdir(parents=True)
 
-        # Copy static files
-        if self.static_dir.exists():
-            shutil.copytree(self.static_dir, self.output_dir / "css", dirs_exist_ok=True)
+        # Copy static files (css folder)
+        css_src = self.static_dir / "css"
+        css_dst = self.output_dir / "css"
+        if css_src.exists():
+            shutil.copytree(css_src, css_dst, dirs_exist_ok=True)
 
         # Load articles
         articles = []
