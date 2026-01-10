@@ -1,0 +1,60 @@
+# Autonomous Content Machine Configuration
+# =========================================
+# This system runs autonomously to generate revenue through content + affiliates
+
+site:
+  name: "Budget Office Setup"
+  tagline: "Smart WFH Gear Without Breaking the Bank"
+  domain: "budgetofficesetup.com"  # Change this to your domain
+  base_url: "https://budgetofficesetup.com"
+
+niche:
+  primary: "budget home office"
+  categories:
+    - desks
+    - chairs
+    - monitors
+    - keyboards
+    - lighting
+    - organization
+    - ergonomics
+    - accessories
+  price_focus: "budget"  # budget, mid-range, premium
+  max_price_point: 300
+
+content:
+  articles_per_day: 3
+  min_word_count: 1200
+  max_word_count: 2000
+  include_affiliate_links: true
+  include_images: true
+  tone: "helpful, practical, budget-conscious"
+
+affiliate:
+  primary_program: "amazon_associates"
+  amazon_associate_tag: "YOUR-TAG-20"  # Set your Amazon Associates tag
+  backup_programs:
+    - shareasale
+    - cj_affiliate
+
+seo:
+  target_keyword_difficulty: 30  # 0-100, lower = easier to rank
+  min_search_volume: 100
+  max_search_volume: 10000
+  focus: "long_tail"  # long_tail, medium_tail, head_terms
+
+automation:
+  schedule: "0 8 * * *"  # Run daily at 8 AM UTC
+  auto_publish: true
+  auto_optimize: true
+  reinvest_threshold: 50  # Reinvest when earnings hit $50
+
+agent:
+  decision_mode: "autonomous"  # autonomous, supervised, manual
+  risk_tolerance: "medium"  # low, medium, high
+  optimize_for: "revenue"  # revenue, traffic, both
+
+api_keys:
+  # Set these as environment variables for security
+  openai: "${OPENAI_API_KEY}"
+  serpapi: "${SERPAPI_KEY}"  # For keyword research (optional)

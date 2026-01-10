@@ -1,0 +1,76 @@
+{
+  "total_articles": 6,
+  "total_revenue": 0.0,
+  "last_run": "2026-01-09T16:23:37.189919",
+  "keywords_used": [
+    "best professional desk under $150",
+    "best modern office chair under $75",
+    "best professional office chair under $50",
+    "best budget monitor 2024",
+    "best compact monitor under $200",
+    "best best office chair under $175"
+  ],
+  "performance_history": [],
+  "decisions_log": [
+    {
+      "timestamp": "2026-01-09T16:17:05.172799",
+      "decision": "focus_on_categories",
+      "reasoning": "Categories ['desks', 'chairs'] have fewer articles, focusing there for balance",
+      "outcome": null
+    },
+    {
+      "timestamp": "2026-01-09T16:17:05.179752",
+      "decision": "cycle_error",
+      "reasoning": "Cycle failed with error: 'KeywordScanner' object has no attribute 'variables'",
+      "outcome": "will_retry_next_cycle"
+    },
+    {
+      "timestamp": "2026-01-09T16:17:56.081083",
+      "decision": "focus_on_categories",
+      "reasoning": "Categories ['desks', 'chairs'] have fewer articles, focusing there for balance",
+      "outcome": null
+    },
+    {
+      "timestamp": "2026-01-09T16:17:56.084202",
+      "decision": "keyword_selection",
+      "reasoning": "Selected 3 keywords based on search volume and competition",
+      "outcome": "Keywords: ['best budget office chair under $200', 'best modern office chair under $100', 'best minimalist desk under $100']"
+    },
+    {
+      "timestamp": "2026-01-09T16:18:50.029662",
+      "decision": "focus_on_categories",
+      "reasoning": "Categories ['desks', 'chairs'] have fewer articles, focusing there for balance",
+      "outcome": null
+    },
+    {
+      "timestamp": "2026-01-09T16:18:50.031667",
+      "decision": "keyword_selection",
+      "reasoning": "Selected 3 keywords based on search volume and competition",
+      "outcome": "Keywords: ['best professional desk under $150', 'best modern office chair under $75', 'best professional office chair under $50']"
+    },
+    {
+      "timestamp": "2026-01-09T16:18:50.074430",
+      "decision": "content_generation",
+      "reasoning": "Generated 3 articles this cycle",
+      "outcome": "Total articles now: 3"
+    },
+    {
+      "timestamp": "2026-01-09T16:22:10.856642",
+      "decision": "focus_on_categories",
+      "reasoning": "Categories ['chairs', 'monitors'] have fewer articles, focusing there for balance",
+      "outcome": null
+    },
+    {
+      "timestamp": "2026-01-09T16:22:10.859644",
+      "decision": "keyword_selection",
+      "reasoning": "Selected 3 keywords based on search volume and competition",
+      "outcome": "Keywords: ['best budget monitor 2024', 'best compact monitor under $200', 'best best office chair under $175']"
+    },
+    {
+      "timestamp": "2026-01-09T16:23:37.035097",
+      "decision": "content_generation",
+      "reasoning": "Generated 3 articles this cycle",
+      "outcome": "Total articles now: 6"
+    }
+  ]
+}
