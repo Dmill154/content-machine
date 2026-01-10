@@ -45,6 +45,23 @@ class SitePublisher:
         self._ensure_templates()
         self.jinja_env = Environment(loader=FileSystemLoader(str(self.templates_dir)))
 
+        # Category to Unsplash image mapping (high quality, free images)
+        self.category_images = {
+            'desks': 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=400&h=200&fit=crop',
+            'chairs': 'https://images.unsplash.com/photo-1580480055273-228ff5388ef8?w=400&h=200&fit=crop',
+            'monitors': 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&h=200&fit=crop',
+            'keyboards': 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400&h=200&fit=crop',
+            'lighting': 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=200&fit=crop',
+            'organization': 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=400&h=200&fit=crop',
+            'ergonomics': 'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=400&h=200&fit=crop',
+            'accessories': 'https://images.unsplash.com/photo-1625225233840-695456021cde?w=400&h=200&fit=crop',
+            'default': 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=200&fit=crop',
+        }
+
+    def _get_image_url(self, category: str) -> str:
+        """Get Unsplash image URL for a category."""
+        return self.category_images.get(category, self.category_images['default'])
+
     def _ensure_templates(self):
         """Ensure HTML templates exist."""
         base_template = self.templates_dir / "base.html"
@@ -64,7 +81,7 @@ class SitePublisher:
     <link rel="canonical" href="{{ canonical_url }}">
     <style>
 /* Desk Deals - Professional Design */
-:root{--primary:#0066cc;--primary-light:#e6f2ff;--accent:#ff6b35;--accent-hover:#e55a2b;--text:#1a1a1a;--text-secondary:#4a5568;--text-muted:#718096;--bg:#fff;--bg-alt:#f8fafc;--bg-dark:#1a1a2e;--border:#e2e8f0;--shadow:0 4px 6px -1px rgba(0,0,0,.1);--shadow-lg:0 10px 15px -3px rgba(0,0,0,.1);--radius:8px;--radius-lg:12px;--max-width:1200px}*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:17px;line-height:1.7;color:var(--text);background:var(--bg)}header{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,.05)}nav{max-width:var(--max-width);margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;height:70px}.logo{font-size:1.6rem;font-weight:800;color:var(--primary);text-decoration:none}nav ul{display:flex;list-style:none;gap:.25rem}nav ul li a{color:var(--text-secondary);text-decoration:none;font-weight:500;font-size:.9rem;padding:.5rem .9rem;border-radius:var(--radius);transition:all .2s}nav ul li a:hover{color:var(--primary);background:var(--primary-light)}.hero{background:linear-gradient(135deg,var(--bg-dark),#16213e);color:#fff;padding:4.5rem 1.5rem;text-align:center}.hero h1{font-size:2.75rem;font-weight:800;margin-bottom:1rem;letter-spacing:-1px}.hero p{font-size:1.2rem;opacity:.9;max-width:550px;margin:0 auto}main{max-width:var(--max-width);margin:0 auto;padding:3rem 1.5rem}section{margin-bottom:3.5rem}section>h2{font-size:1.6rem;font-weight:700;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid var(--primary);display:inline-block}.posts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.25rem}.post-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);transition:all .25s}.post-card:hover{border-color:var(--primary);box-shadow:var(--shadow-lg);transform:translateY(-3px)}.post-card a{display:block;padding:1.4rem;text-decoration:none;color:inherit}.post-card h3{font-size:1.05rem;font-weight:600;margin-bottom:.6rem;line-height:1.4}.post-card p{color:var(--text-muted);font-size:.9rem;line-height:1.5;margin-bottom:.9rem}.category{display:inline-block;background:var(--primary-light);color:var(--primary);padding:.3rem .75rem;border-radius:50px;font-size:.75rem;font-weight:600;text-transform:uppercase}.category-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.9rem}.category-card{background:var(--bg-alt);border:1px solid var(--border);padding:1.5rem 1rem;border-radius:var(--radius-lg);text-align:center;text-decoration:none;color:var(--text);font-weight:600;transition:all .25s}.category-card:hover{background:var(--primary);color:#fff;border-color:var(--primary);transform:translateY(-2px)}.category-card h3{font-size:.95rem}article.post{max-width:780px;margin:0 auto}.post-header{margin-bottom:2rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border)}.post-header h1{font-size:2.1rem;font-weight:800;line-height:1.25;margin-bottom:.9rem}.meta{display:flex;align-items:center;gap:.9rem;color:var(--text-muted);font-size:.9rem}.post-content{font-size:1.05rem;line-height:1.75}.post-content h2{font-size:1.5rem;font-weight:700;margin:2.25rem 0 .9rem}.post-content h3{font-size:1.25rem;font-weight:600;margin:1.75rem 0 .6rem}.post-content p{margin-bottom:1.1rem;color:var(--text-secondary)}.post-content ul,.post-content ol{margin:1.1rem 0;padding-left:1.4rem}.post-content li{margin-bottom:.6rem;color:var(--text-secondary)}.post-content strong{color:var(--text);font-weight:600}.post-content a{color:var(--primary);text-decoration:none;font-weight:500}.post-content a:hover{text-decoration:underline}.post-content a[href*="amazon"]{display:inline-block;background:linear-gradient(135deg,var(--accent),#ff8c5a);color:#fff!important;padding:.7rem 1.4rem;border-radius:var(--radius);font-weight:700;font-size:.95rem;text-decoration:none!important;margin:.4rem 0;box-shadow:0 2px 8px rgba(255,107,53,.3)}.post-content a[href*="amazon"]:hover{background:linear-gradient(135deg,var(--accent-hover),#ff7a42);transform:translateY(-2px)}.post-content table{width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:.9rem;overflow:hidden;box-shadow:var(--shadow)}.post-content th{background:var(--bg-dark);color:#fff;padding:.9rem;text-align:left;font-weight:600}.post-content td{padding:.9rem;border-bottom:1px solid var(--border)}.post-content tr:nth-child(even){background:var(--bg-alt)}.post-footer{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid var(--border);color:var(--text-muted);font-size:.85rem}footer{background:var(--bg-dark);color:#fff;padding:2.5rem 1.5rem;text-align:center;margin-top:3rem}footer p{opacity:.85;margin-bottom:.4rem}footer small{opacity:.6;font-size:.8rem}.category-page h1{font-size:2rem;font-weight:800;margin-bottom:.6rem}.category-page>p{color:var(--text-muted);font-size:1.05rem;margin-bottom:1.75rem}@media(max-width:768px){body{font-size:16px}nav{flex-direction:column;height:auto;padding:.9rem;gap:.75rem}nav ul{flex-wrap:wrap;justify-content:center;gap:.2rem}nav ul li a{padding:.35rem .6rem;font-size:.8rem}.hero{padding:2.5rem 1.25rem}.hero h1{font-size:1.9rem}.hero p{font-size:1rem}main{padding:1.75rem 1rem}.posts-grid{grid-template-columns:1fr}.post-header h1{font-size:1.6rem}.post-content{font-size:1rem}.category-grid{grid-template-columns:repeat(2,1fr)}.post-content a[href*="amazon"]{display:block;text-align:center}}
+:root{--primary:#0066cc;--primary-light:#e6f2ff;--accent:#ff6b35;--accent-hover:#e55a2b;--text:#1a1a1a;--text-secondary:#4a5568;--text-muted:#718096;--bg:#fff;--bg-alt:#f8fafc;--bg-dark:#1a1a2e;--border:#e2e8f0;--shadow:0 4px 6px -1px rgba(0,0,0,.1);--shadow-lg:0 10px 15px -3px rgba(0,0,0,.1);--radius:8px;--radius-lg:12px;--max-width:1200px}*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:17px;line-height:1.7;color:var(--text);background:var(--bg)}header{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,.05)}nav{max-width:var(--max-width);margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;height:70px}.logo{font-size:1.6rem;font-weight:800;color:var(--primary);text-decoration:none}nav ul{display:flex;list-style:none;gap:.25rem}nav ul li a{color:var(--text-secondary);text-decoration:none;font-weight:500;font-size:.9rem;padding:.5rem .9rem;border-radius:var(--radius);transition:all .2s}nav ul li a:hover{color:var(--primary);background:var(--primary-light)}.hero{background:linear-gradient(135deg,var(--bg-dark),#16213e);color:#fff;padding:4.5rem 1.5rem;text-align:center}.hero h1{font-size:2.75rem;font-weight:800;margin-bottom:1rem;letter-spacing:-1px}.hero p{font-size:1.2rem;opacity:.9;max-width:550px;margin:0 auto}main{max-width:var(--max-width);margin:0 auto;padding:3rem 1.5rem}section{margin-bottom:3.5rem}section>h2{font-size:1.6rem;font-weight:700;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid var(--primary);display:inline-block}.posts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.25rem}.post-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);transition:all .25s}.post-card:hover{border-color:var(--primary);box-shadow:var(--shadow-lg);transform:translateY(-3px)}.post-card a{display:block;padding:1.4rem;text-decoration:none;color:inherit}.post-card h3{font-size:1.05rem;font-weight:600;margin-bottom:.6rem;line-height:1.4}.post-card p{color:var(--text-muted);font-size:.9rem;line-height:1.5;margin-bottom:.9rem}.category{display:inline-block;background:var(--primary-light);color:var(--primary);padding:.3rem .75rem;border-radius:50px;font-size:.75rem;font-weight:600;text-transform:uppercase}.category-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.9rem}.category-card{background:var(--bg-alt);border:1px solid var(--border);padding:1.5rem 1rem;border-radius:var(--radius-lg);text-align:center;text-decoration:none;color:var(--text);font-weight:600;transition:all .25s}.category-card:hover{background:var(--primary);color:#fff;border-color:var(--primary);transform:translateY(-2px)}.category-card h3{font-size:.95rem}article.post{max-width:780px;margin:0 auto}.post-header{margin-bottom:2rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border)}.post-header h1{font-size:2.1rem;font-weight:800;line-height:1.25;margin-bottom:.9rem}.meta{display:flex;align-items:center;gap:.9rem;color:var(--text-muted);font-size:.9rem}.post-content{font-size:1.05rem;line-height:1.75}.post-content h2{font-size:1.5rem;font-weight:700;margin:2.25rem 0 .9rem}.post-content h3{font-size:1.25rem;font-weight:600;margin:1.75rem 0 .6rem}.post-content p{margin-bottom:1.1rem;color:var(--text-secondary)}.post-content ul,.post-content ol{margin:1.1rem 0;padding-left:1.4rem}.post-content li{margin-bottom:.6rem;color:var(--text-secondary)}.post-content strong{color:var(--text);font-weight:600}.post-content a{color:var(--primary);text-decoration:none;font-weight:500}.post-content a:hover{text-decoration:underline}.post-content a[href*="amazon"]{display:inline-block;background:linear-gradient(135deg,var(--accent),#ff8c5a);color:#fff!important;padding:.7rem 1.4rem;border-radius:var(--radius);font-weight:700;font-size:.95rem;text-decoration:none!important;margin:.4rem 0;box-shadow:0 2px 8px rgba(255,107,53,.3)}.post-content a[href*="amazon"]:hover{background:linear-gradient(135deg,var(--accent-hover),#ff7a42);transform:translateY(-2px)}.featured-image{width:100%;height:300px;object-fit:cover;border-radius:var(--radius-lg);margin-bottom:1.5rem}.post-thumb{width:100%;height:160px;object-fit:cover;border-radius:var(--radius-lg) var(--radius-lg) 0 0}.post-card a{padding:0}.post-card-content{padding:1.4rem}.post-content table{width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:.9rem;overflow:hidden;box-shadow:var(--shadow)}.post-content th{background:var(--bg-dark);color:#fff;padding:.9rem;text-align:left;font-weight:600}.post-content td{padding:.9rem;border-bottom:1px solid var(--border)}.post-content tr:nth-child(even){background:var(--bg-alt)}.post-footer{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid var(--border);color:var(--text-muted);font-size:.85rem}footer{background:var(--bg-dark);color:#fff;padding:2.5rem 1.5rem;text-align:center;margin-top:3rem}footer p{opacity:.85;margin-bottom:.4rem}footer small{opacity:.6;font-size:.8rem}.category-page h1{font-size:2rem;font-weight:800;margin-bottom:.6rem}.category-page>p{color:var(--text-muted);font-size:1.05rem;margin-bottom:1.75rem}@media(max-width:768px){body{font-size:16px}nav{flex-direction:column;height:auto;padding:.9rem;gap:.75rem}nav ul{flex-wrap:wrap;justify-content:center;gap:.2rem}nav ul li a{padding:.35rem .6rem;font-size:.8rem}.hero{padding:2.5rem 1.25rem}.hero h1{font-size:1.9rem}.hero p{font-size:1rem}main{padding:1.75rem 1rem}.posts-grid{grid-template-columns:1fr}.post-header h1{font-size:1.6rem}.post-content{font-size:1rem}.category-grid{grid-template-columns:repeat(2,1fr)}.post-content a[href*="amazon"]{display:block;text-align:center}}
     </style>
     <!-- Google tag (gtag.js) - Replace GA_MEASUREMENT_ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
@@ -96,11 +113,14 @@ class SitePublisher:
 </body>
 </html>'''
 
-        # Article template
+        # Article template with featured image
         article_html = '''{% extends "base.html" %}
 {% block content %}
 <article class="post">
     <header class="post-header">
+        <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=800&h=400&fit=crop"
+             alt="{{ title }}" class="featured-image"
+             onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=400&fit=crop'">
         <h1>{{ title }}</h1>
         <div class="meta">
             <span class="category">{{ category|title }}</span>
@@ -116,7 +136,7 @@ class SitePublisher:
 </article>
 {% endblock %}'''
 
-        # Index template
+        # Index template with thumbnail images
         index_html = '''{% extends "base.html" %}
 {% block content %}
 <section class="hero">
@@ -129,9 +149,13 @@ class SitePublisher:
         {% for article in articles[:12] %}
         <article class="post-card">
             <a href="{{ base_url }}/{{ article.slug }}/">
-                <h3>{{ article.title }}</h3>
-                <p>{{ article.meta_description[:100] }}...</p>
-                <span class="category">{{ article.category|title }}</span>
+                <img src="{{ article.image_url }}" alt="{{ article.title }}" class="post-thumb"
+                     onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=200&fit=crop'">
+                <div class="post-card-content">
+                    <h3>{{ article.title }}</h3>
+                    <p>{{ article.meta_description[:100] }}...</p>
+                    <span class="category">{{ article.category|title }}</span>
+                </div>
             </a>
         </article>
         {% endfor %}
@@ -149,7 +173,7 @@ class SitePublisher:
 </section>
 {% endblock %}'''
 
-        # Category template
+        # Category template with images
         category_html = '''{% extends "base.html" %}
 {% block content %}
 <section class="category-page">
@@ -159,8 +183,12 @@ class SitePublisher:
         {% for article in articles %}
         <article class="post-card">
             <a href="{{ base_url }}/{{ article.slug }}/">
-                <h3>{{ article.title }}</h3>
-                <p>{{ article.meta_description[:100] }}...</p>
+                <img src="{{ article.image_url }}" alt="{{ article.title }}" class="post-thumb"
+                     onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=200&fit=crop'">
+                <div class="post-card-content">
+                    <h3>{{ article.title }}</h3>
+                    <p>{{ article.meta_description[:100] }}...</p>
+                </div>
             </a>
         </article>
         {% endfor %}
@@ -485,6 +513,10 @@ footer {
 
         # Sort by date (newest first)
         articles.sort(key=lambda x: x.get('published_at', ''), reverse=True)
+
+        # Add image URLs to articles
+        for article in articles:
+            article['image_url'] = self._get_image_url(article.get('category', 'default'))
 
         categories = self.config['niche']['categories']
 

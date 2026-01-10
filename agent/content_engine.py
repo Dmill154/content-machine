@@ -215,76 +215,93 @@ Choosing the right {keyword} is an investment in your comfort and productivity. 
 
     def _generate_listicle_prompt(self, keyword: str, category: str) -> tuple:
         """Generate prompt for listicle-style article."""
-        system_prompt = """You are an expert content writer specializing in home office and remote work products.
+        from datetime import datetime
+        current_year = datetime.now().year
+
+        system_prompt = f"""You are an expert content writer specializing in home office and remote work products in {current_year}.
 You write helpful, detailed, and honest product recommendations. Your content is SEO-optimized but reads naturally.
 Always include specific product features, pros/cons, and who each product is best for.
-Include natural calls to action encouraging readers to check current prices."""
+Use REAL product names from actual brands (Amazon Basics, Logitech, IKEA, Flash Furniture, HON, Steelcase, etc.)
+IMPORTANT: Do NOT include any links or URLs. Just mention product names - links will be added automatically later."""
 
         user_prompt = f"""Write a comprehensive listicle article for the keyword: "{keyword}"
 
 Category: {category}
+IMPORTANT: This is for {current_year}. Use "{current_year}" in the title, NOT 2023 or 2024.
 
 Requirements:
-1. Start with an engaging H1 title that includes the keyword
+1. Start with an engaging H1 title that includes the keyword AND the year {current_year}
 2. Write a compelling introduction (100-150 words) that addresses reader pain points
-3. List 5-7 products with detailed descriptions
+3. List 5-7 REAL products with detailed descriptions (use actual brand names)
 4. For each product include:
-   - Product name as H3
+   - Product name as H4 header (use real product names like "Logitech MX Keys" or "IKEA MARKUS Chair")
    - Key features (bulleted list)
    - Pros and cons
    - Who it's best for
-   - A call to action to "check the current price on Amazon"
+   - Price range estimate
+   - End with text: "Check price on Amazon" (no link - will be added automatically)
 5. Include a buying guide section with tips
 6. End with a conclusion and FAQ section
 7. Total length: {self.config['content']['min_word_count']}-{self.config['content']['max_word_count']} words
 
 Write in a {self.config['content']['tone']} tone.
 
-Format the output as Markdown."""
+Format the output as Markdown. Do NOT include any [link](url) markdown - just plain text."""
 
         return system_prompt, user_prompt
 
     def _generate_review_prompt(self, keyword: str, category: str) -> tuple:
         """Generate prompt for review-style article."""
-        system_prompt = """You are an expert product reviewer for home office equipment.
+        from datetime import datetime
+        current_year = datetime.now().year
+
+        system_prompt = f"""You are an expert product reviewer for home office equipment in {current_year}.
 You provide balanced, thorough reviews that help readers make informed decisions.
-Your reviews are detailed, honest, and include real-world usage scenarios."""
+Your reviews are detailed, honest, and include real-world usage scenarios.
+IMPORTANT: Do NOT include any links or URLs - they will be added automatically."""
 
         user_prompt = f"""Write a detailed review article for: "{keyword}"
 
 Category: {category}
+IMPORTANT: This is a {current_year} review. Include "{current_year}" in the title.
 
 Structure:
-1. H1 title with the keyword
+1. H1 title with the keyword and {current_year}
 2. Quick verdict box (rating, pros, cons, best for)
 3. Introduction - who this review is for
 4. Design and build quality section
 5. Features breakdown
 6. Performance in real use
 7. Value for money analysis
-8. Comparison with alternatives
+8. Comparison with alternatives (mention real competing products)
 9. Final verdict with recommendation
-10. FAQ section
+10. Text: "Check price on Amazon" at the end
+11. FAQ section
 
 Length: {self.config['content']['min_word_count']}-{self.config['content']['max_word_count']} words
 Tone: {self.config['content']['tone']}
 
-Format as Markdown with clear headers."""
+Format as Markdown. Do NOT include any [link](url) markdown."""
 
         return system_prompt, user_prompt
 
     def _generate_comparison_prompt(self, keyword: str, category: str) -> tuple:
         """Generate prompt for comparison article."""
-        system_prompt = """You are a product comparison expert for home office equipment.
+        from datetime import datetime
+        current_year = datetime.now().year
+
+        system_prompt = f"""You are a product comparison expert for home office equipment in {current_year}.
 You create fair, detailed comparisons that help readers choose between options.
-You highlight the strengths of each option and recommend based on user needs."""
+You highlight the strengths of each option and recommend based on user needs.
+IMPORTANT: Do NOT include any links or URLs - they will be added automatically."""
 
         user_prompt = f"""Write a detailed comparison article for: "{keyword}"
 
 Category: {category}
+IMPORTANT: This is a {current_year} comparison. Include "{current_year}" in the title.
 
 Structure:
-1. H1 title with keyword
+1. H1 title with keyword and {current_year}
 2. Quick comparison table
 3. Introduction explaining why this comparison matters
 4. Detailed breakdown of each option
@@ -295,75 +312,89 @@ Structure:
    - Price/Value
 6. Who should choose each option
 7. Final recommendation
-8. FAQ
-
-Length: {self.config['content']['min_word_count']}-{self.config['content']['max_word_count']} words
-Tone: {self.config['content']['tone']}
-
-Format as Markdown."""
-
-        return system_prompt, user_prompt
-
-    def _generate_guide_prompt(self, keyword: str, category: str) -> tuple:
-        """Generate prompt for how-to/guide article."""
-        system_prompt = """You are a home office setup expert.
-You create helpful, actionable guides that solve real problems.
-Your guides are step-by-step, beginner-friendly, and thorough."""
-
-        user_prompt = f"""Write a comprehensive guide for: "{keyword}"
-
-Category: {category}
-
-Structure:
-1. H1 title with keyword
-2. Introduction - what readers will learn
-3. Prerequisites/what you'll need
-4. Step-by-step instructions with clear headers
-5. Pro tips throughout
-6. Common mistakes to avoid
-7. Product recommendations where relevant
-8. Conclusion with next steps
+8. "Check price on Amazon" for each product
 9. FAQ
 
 Length: {self.config['content']['min_word_count']}-{self.config['content']['max_word_count']} words
 Tone: {self.config['content']['tone']}
 
-Format as Markdown."""
+Format as Markdown. Do NOT include any [link](url) markdown."""
+
+        return system_prompt, user_prompt
+
+    def _generate_guide_prompt(self, keyword: str, category: str) -> tuple:
+        """Generate prompt for how-to/guide article."""
+        from datetime import datetime
+        current_year = datetime.now().year
+
+        system_prompt = f"""You are a home office setup expert writing in {current_year}.
+You create helpful, actionable guides that solve real problems.
+Your guides are step-by-step, beginner-friendly, and thorough.
+When recommending products, use REAL product names from actual brands.
+IMPORTANT: Do NOT include any links or URLs - they will be added automatically."""
+
+        user_prompt = f"""Write a comprehensive guide for: "{keyword}"
+
+Category: {category}
+IMPORTANT: This is a {current_year} guide.
+
+Structure:
+1. H1 title with keyword (include {current_year} if relevant)
+2. Introduction - what readers will learn
+3. Prerequisites/what you'll need
+4. Step-by-step instructions with clear headers
+5. Pro tips throughout
+6. Common mistakes to avoid
+7. Product recommendations where relevant (use real product names)
+8. "Check price on Amazon" after product mentions
+9. Conclusion with next steps
+10. FAQ
+
+Length: {self.config['content']['min_word_count']}-{self.config['content']['max_word_count']} words
+Tone: {self.config['content']['tone']}
+
+Format as Markdown. Do NOT include any [link](url) markdown."""
 
         return system_prompt, user_prompt
 
     def _generate_roundup_prompt(self, keyword: str, category: str) -> tuple:
         """Generate prompt for product roundup article."""
-        system_prompt = """You are a budget-conscious home office product expert.
-You curate the best products at different price points.
-Your recommendations are practical, value-focused, and well-researched."""
+        from datetime import datetime
+        current_year = datetime.now().year
+
+        system_prompt = f"""You are a budget-conscious home office product expert writing in {current_year}.
+You curate the best products at different price points using REAL product names from actual brands.
+Your recommendations are practical, value-focused, and well-researched.
+IMPORTANT: Do NOT include any links or URLs. Just mention product names - links will be added automatically."""
 
         user_prompt = f"""Write a product roundup article for: "{keyword}"
 
 Category: {category}
+IMPORTANT: This is for {current_year}. Use "{current_year}" in the title.
 
 Structure:
-1. H1 title with keyword and year
-2. Quick picks summary box
+1. H1 title with keyword and year {current_year}
+2. Quick picks summary table
 3. Introduction - why budget matters
 4. How we chose these products
 5. Products organized by price tier:
    - Budget picks (under $50)
    - Mid-range picks ($50-150)
    - Worth the splurge ($150+)
-6. Each product needs:
-   - Name, price range
+6. Each product needs (use H4 headers for product names):
+   - Real product name (e.g., "Amazon Basics High-Back Chair", "Logitech K380")
+   - Price range
    - Key features
    - Why we like it
    - Any drawbacks
-   - CTA to check price
+   - Text: "Check price on Amazon" (no link needed)
 7. Buying guide with tips
 8. FAQ section
 
 Length: {self.config['content']['min_word_count']}-{self.config['content']['max_word_count']} words
 Tone: {self.config['content']['tone']}
 
-Format as Markdown."""
+Format as Markdown. Do NOT include any [link](url) markdown."""
 
         return system_prompt, user_prompt
 
