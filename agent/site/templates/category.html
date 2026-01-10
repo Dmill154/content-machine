@@ -7,8 +7,12 @@
         {% for article in articles %}
         <article class="post-card">
             <a href="{{ base_url }}/{{ article.slug }}/">
-                <h3>{{ article.title }}</h3>
-                <p>{{ article.meta_description[:100] }}...</p>
+                <img src="{{ article.image_url }}" alt="{{ article.title }}" class="post-thumb"
+                     onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=200&fit=crop'">
+                <div class="post-card-content">
+                    <h3>{{ article.title }}</h3>
+                    <p>{{ article.meta_description[:100] }}...</p>
+                </div>
             </a>
         </article>
         {% endfor %}

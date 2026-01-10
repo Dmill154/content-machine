@@ -1,8 +1,37 @@
 {
-  "total_articles": 0,
+  "total_articles": 3,
   "total_revenue": 0.0,
-  "last_run": null,
-  "keywords_used": [],
+  "last_run": "2026-01-09T18:53:31.986513",
+  "keywords_used": [
+    "best budget office chair under $150",
+    "best minimalist office chair under $200",
+    "best modern desk under $75"
+  ],
   "performance_history": [],
-  "decisions_log": []
+  "decisions_log": [
+    {
+      "timestamp": "2026-01-09T18:53:31.185608",
+      "decision": "focus_on_categories",
+      "reasoning": "Categories ['desks', 'chairs'] have fewer articles, focusing there for balance",
+      "outcome": null
+    },
+    {
+      "timestamp": "2026-01-09T18:53:31.189254",
+      "decision": "keyword_selection",
+      "reasoning": "Selected 3 keywords based on search volume and competition",
+      "outcome": "Keywords: ['best budget office chair under $150', 'best minimalist office chair under $200', 'best modern desk under $75']"
+    },
+    {
+      "timestamp": "2026-01-09T18:53:31.250030",
+      "decision": "content_generation",
+      "reasoning": "Generated 3 articles this cycle",
+      "outcome": "Total articles now: 3"
+    },
+    {
+      "timestamp": "2026-01-09T18:53:31.975148",
+      "decision": "promotion_cycle",
+      "reasoning": "Submitted sitemaps to search engines for indexing",
+      "outcome": "Google: False, Bing: False"
+    }
+  ]
 }

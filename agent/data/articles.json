@@ -1,1 +1,41 @@
-[]
+[
+  {
+    "id": "fe1b5ce13994",
+    "title": "Home Office Product",
+    "slug": "home-office-product",
+    "keyword": "best budget office chair under $150",
+    "category": "desks",
+    "article_type": "roundup",
+    "meta_description": "Finding the right home office product can be challenging with so many options available. In this guide, we'll help you find the perfect solution for your hom...",
+    "word_count": 205,
+    "created_at": "2026-01-09T18:53:31.194286",
+    "status": "published",
+    "published_at": "2026-01-09T18:53:31.271983"
+  },
+  {
+    "id": "b7a4cebc6b8c",
+    "title": "Home Office Product",
+    "slug": "home-office-product",
+    "keyword": "best minimalist office chair under $200",
+    "category": "desks",
+    "article_type": "roundup",
+    "meta_description": "Finding the right home office product can be challenging with so many options available. In this guide, we'll help you find the perfect solution for your hom...",
+    "word_count": 205,
+    "created_at": "2026-01-09T18:53:31.200345",
+    "status": "published",
+    "published_at": "2026-01-09T18:53:31.271983"
+  },
+  {
+    "id": "7e1c7565177d",
+    "title": "Home Office Product",
+    "slug": "home-office-product",
+    "keyword": "best modern desk under $75",
+    "category": "desks",
+    "article_type": "roundup",
+    "meta_description": "Finding the right home office product can be challenging with so many options available. In this guide, we'll help you find the perfect solution for your hom...",
+    "word_count": 205,
+    "created_at": "2026-01-09T18:53:31.217331",
+    "status": "published",
+    "published_at": "2026-01-09T18:53:31.272993"
+  }
+]
