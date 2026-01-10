@@ -362,5 +362,44 @@
     "created_at": "2026-01-10T02:12:01.453179",
     "status": "published",
     "published_at": "2026-01-10T02:12:01.456064"
+  },
+  {
+    "id": "dcdbff9aaafe",
+    "title": "Best Minimalist Office Chair Under $125 in 2023",
+    "slug": "best-minimalist-office-chair-under-125-in-2023",
+    "keyword": "best minimalist office chair under $125",
+    "category": "chairs",
+    "article_type": "roundup",
+    "meta_description": "1. Furmax Mid Back Office Chair  \nPrice Range: Under $50  \n- Key Features:\n  - Ergonomic design with a breathable mesh back\n  - Cushioned seat for comfort\n  ...",
+    "word_count": 866,
+    "created_at": "2026-01-10T02:18:25.911742",
+    "status": "published",
+    "published_at": "2026-01-10T02:19:16.088172"
+  },
+  {
+    "id": "e38dd8ad49a9",
+    "title": "Flexispot Chair Review 2024",
+    "slug": "flexispot-chair-review-2024",
+    "keyword": "flexispot chair review 2024",
+    "category": "chairs",
+    "article_type": "review",
+    "meta_description": "One of the standout features of the design is the adjustable lumbar support. Positioned to contour to the natural curve of your spine, this feature is crucia...",
+    "word_count": 1320,
+    "created_at": "2026-01-10T02:18:50.218039",
+    "status": "published",
+    "published_at": "2026-01-10T02:19:16.088187"
+  },
+  {
+    "id": "5da072910255",
+    "title": "Budget Ergonomic Chair Review",
+    "slug": "budget-ergonomic-chair-review",
+    "keyword": "budget ergonomic chair review",
+    "category": "chairs",
+    "article_type": "review",
+    "meta_description": "| Rating | Pros | Cons | Best For |\n|--------|------|------|----------|\n| \u2605\u2605\u2605\u2605\u2606 (4/5) | Affordable price, Adjustable features, Good lumbar support | Limited ...",
+    "word_count": 1228,
+    "created_at": "2026-01-10T02:19:16.084862",
+    "status": "published",
+    "published_at": "2026-01-10T02:19:16.088197"
   }
 ]
