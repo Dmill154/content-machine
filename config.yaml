@@ -32,7 +32,7 @@ content:
 
 affiliate:
   primary_program: "amazon_associates"
-  amazon_associate_tag: "YOUR-TAG-20"  # Set your Amazon Associates tag
+  amazon_associate_tag: "deskdeals-20"
   backup_programs:
     - shareasale
     - cj_affiliate
