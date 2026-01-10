@@ -308,7 +308,16 @@ class OrchestratorAgent:
 
 async def main():
     """Main entry point for the autonomous agent."""
-    agent = OrchestratorAgent()
+    import os
+    # Determine config path based on where we're running from
+    if os.path.exists("config.yaml"):
+        config_path = "config.yaml"
+    elif os.path.exists("../config.yaml"):
+        config_path = "../config.yaml"
+    else:
+        config_path = "config.yaml"  # Will error if not found
+
+    agent = OrchestratorAgent(config_path=config_path)
     await agent.run_daily_cycle()
 
 
