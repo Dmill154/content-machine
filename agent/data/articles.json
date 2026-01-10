@@ -401,5 +401,44 @@
     "created_at": "2026-01-10T02:19:16.084862",
     "status": "published",
     "published_at": "2026-01-10T02:19:16.088197"
+  },
+  {
+    "id": "d0039ae47c8a",
+    "title": "Best Affordable Keyboards Under $150 in 2023",
+    "slug": "best-affordable-keyboards-under-150-in-2023",
+    "keyword": "best affordable keyboard under $150",
+    "category": "monitors",
+    "article_type": "roundup",
+    "meta_description": "In today\u2019s world, a good keyboard is essential for productivity, especially for those working from home or spending long hours on their computers. However, w...",
+    "word_count": 1026,
+    "created_at": "2026-01-10T02:25:32.638105",
+    "status": "published",
+    "published_at": "2026-01-10T02:26:30.635344"
+  },
+  {
+    "id": "c11e07ea7882",
+    "title": "Best Affordable Keyboards Under $75 in 2023",
+    "slug": "best-affordable-keyboards-under-75-in-2023",
+    "keyword": "best affordable keyboard under $75",
+    "category": "monitors",
+    "article_type": "roundup",
+    "meta_description": "- Price: We focused on products that are budget-friendly while still providing excellent value.\n- User Reviews: Real user feedback helped us gauge the perfor...",
+    "word_count": 828,
+    "created_at": "2026-01-10T02:25:58.275339",
+    "status": "published",
+    "published_at": "2026-01-10T02:26:30.635359"
+  },
+  {
+    "id": "318b48dd5528",
+    "title": "Best Cheap Monitor Under $200 for 2023",
+    "slug": "best-cheap-monitor-under-200-for-2023",
+    "keyword": "best cheap monitor under $200",
+    "category": "monitors",
+    "article_type": "roundup",
+    "meta_description": "Q: Can I use a monitor for gaming under $200?  \nA: Yes, there are several monitors under $200 that cater specifically to gamers, offering features like high ...",
+    "word_count": 983,
+    "created_at": "2026-01-10T02:26:30.631903",
+    "status": "published",
+    "published_at": "2026-01-10T02:26:30.635369"
   }
 ]
