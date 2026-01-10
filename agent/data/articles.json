@@ -76,5 +76,44 @@
     "created_at": "2026-01-09T19:10:29.269798",
     "status": "published",
     "published_at": "2026-01-09T19:10:29.327618"
+  },
+  {
+    "id": "a19c196935fc",
+    "title": "Best Professional Monitor Under $200 in 2026",
+    "slug": "best-professional-monitor-under-200-in-2026",
+    "keyword": "best professional monitor under $200",
+    "category": "monitors",
+    "article_type": "roundup",
+    "meta_description": "| Product Name                          | Price Range  | Key Features                         |\n|---------------------------------------|--------------|-----...",
+    "word_count": 825,
+    "created_at": "2026-01-10T08:21:17.994237",
+    "status": "published",
+    "published_at": "2026-01-10T08:22:21.077742"
+  },
+  {
+    "id": "a7e93a32d5cb",
+    "title": "Best Minimalist Keyboard Under $100 in 2026",
+    "slug": "best-minimalist-keyboard-under-100-in-2026",
+    "keyword": "best minimalist keyboard under $100",
+    "category": "monitors",
+    "article_type": "roundup",
+    "meta_description": "| Product Name                        | Price Range  | Key Features                                        |\n|-------------------------------------|---------...",
+    "word_count": 1001,
+    "created_at": "2026-01-10T08:21:50.763921",
+    "status": "published",
+    "published_at": "2026-01-10T08:22:21.077757"
+  },
+  {
+    "id": "cb2ea8fab9f5",
+    "title": "Wireless vs Wired Keyboard 2026: A Comprehensive Comparison",
+    "slug": "wireless-vs-wired-keyboard-2026-a-comprehensive-comparison",
+    "keyword": "wireless vs wired keyboard 2024",
+    "category": "monitors",
+    "article_type": "comparison",
+    "meta_description": "| Feature               | Wireless Keyboard                         | Wired Keyboard                          |\n|----------------------|---------------------...",
+    "word_count": 1121,
+    "created_at": "2026-01-10T08:22:21.073781",
+    "status": "published",
+    "published_at": "2026-01-10T08:22:21.077767"
   }
 ]
