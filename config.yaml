@@ -3,10 +3,10 @@
 # This system runs autonomously to generate revenue through content + affiliates
 
 site:
-  name: "Budget Office Setup"
+  name: "Desk Deals"
   tagline: "Smart WFH Gear Without Breaking the Bank"
-  domain: "budgetofficesetup.com"  # Change this to your domain
-  base_url: "https://budgetofficesetup.com"
+  domain: "www.deskdeals.ca"
+  base_url: "https://www.deskdeals.ca"
 
 niche:
   primary: "budget home office"
