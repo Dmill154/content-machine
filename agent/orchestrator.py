@@ -20,6 +20,8 @@ from keyword_scanner import KeywordScanner
 from content_engine import ContentEngine
 from publisher import SitePublisher
 from analytics import AnalyticsEngine
+from link_injector import LinkInjector
+from promoter import AutoPromoter
 
 console = Console()
 
@@ -39,6 +41,8 @@ class OrchestratorAgent:
         self.content_engine = ContentEngine(self.config)
         self.publisher = SitePublisher(self.config)
         self.analytics = AnalyticsEngine(self.config)
+        self.link_injector = LinkInjector(self.config)
+        self.promoter = AutoPromoter(self.config)
 
         # Agent state
         self.state_file = self.data_dir / "agent_state.json"
@@ -130,6 +134,9 @@ class OrchestratorAgent:
 
             # Phase 5: Optimize existing content
             await self._phase_optimize()
+
+            # Phase 6: Promote content
+            await self._phase_promote()
 
             # Update state
             self.state["last_run"] = datetime.now().isoformat()
@@ -231,6 +238,10 @@ class OrchestratorAgent:
                 )
 
                 if article:
+                    # Inject affiliate links into the article
+                    article['content'] = self.link_injector.process_article(
+                        article['content'], keyword
+                    )
                     articles_created += 1
                     self.state["keywords_used"].append(keyword)
                     console.print(f"    [green]OK[/green] Created: {article['title']}")
@@ -275,6 +286,28 @@ class OrchestratorAgent:
                 None
             )
             # Could trigger rewrites or improvements here
+
+    async def _phase_promote(self):
+        """Phase 6: Promote content across channels."""
+        console.print("\n[bold]Phase 6: PROMOTE[/bold]")
+
+        # Submit sitemaps to search engines
+        promo_results = await self.promoter.run_promotion_cycle([])
+
+        if promo_results["search_engines"].get("google"):
+            console.print("  [green]OK[/green] Sitemap submitted to Google")
+        if promo_results["search_engines"].get("bing"):
+            console.print("  [green]OK[/green] Sitemap submitted to Bing")
+
+        # Get promotion status
+        status = self.promoter.get_promotion_status()
+        console.print(f"  Total articles promoted: {status['total_promoted']}")
+
+        self._log_decision(
+            "promotion_cycle",
+            "Submitted sitemaps to search engines for indexing",
+            f"Google: {promo_results['search_engines'].get('google')}, Bing: {promo_results['search_engines'].get('bing')}"
+        )
 
     async def _count_articles_per_category(self) -> dict:
         """Count how many articles exist per category."""
