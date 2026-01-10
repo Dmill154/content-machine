@@ -128,5 +128,44 @@
     "created_at": "2026-01-10T00:46:17.332147",
     "status": "published",
     "published_at": "2026-01-10T00:46:17.334587"
+  },
+  {
+    "id": "0da81fd7f27c",
+    "title": "Best Budget Keyboard Under $75 - 2023",
+    "slug": "best-budget-keyboard-under-75-2023",
+    "keyword": "best budget keyboard under $75",
+    "category": "keyboards",
+    "article_type": "roundup",
+    "meta_description": "| Product                      | Price Range | Key Features                          |\n|------------------------------|-------------|------------------------...",
+    "word_count": 922,
+    "created_at": "2026-01-10T00:53:45.450525",
+    "status": "published",
+    "published_at": "2026-01-10T00:54:40.128415"
+  },
+  {
+    "id": "d9f8e68a98de",
+    "title": "Best Modern Keyboard Under $125: 2023",
+    "slug": "best-modern-keyboard-under-125-2023",
+    "keyword": "best modern keyboard under $125",
+    "category": "keyboards",
+    "article_type": "roundup",
+    "meta_description": "1. Type of Use: Determine whether you'll primarily be typing for work, gaming, or casual use. Mechanical keyboards are often favored for gaming, while membra...",
+    "word_count": 1041,
+    "created_at": "2026-01-10T00:54:11.373129",
+    "status": "published",
+    "published_at": "2026-01-10T00:54:40.128431"
+  },
+  {
+    "id": "f04381e2dac6",
+    "title": "Split Keyboard Review 2025",
+    "slug": "split-keyboard-review-2025",
+    "keyword": "split keyboard review 2025",
+    "category": "keyboards",
+    "article_type": "review",
+    "meta_description": "| Rating       | \u2b50\u2b50\u2b50\u2b50\u2606 (4/5)         |\n|--------------|----------------------|\n| Pros     | Ergonomic design, customizable keys, reduces wrist strain, portab...",
+    "word_count": 1149,
+    "created_at": "2026-01-10T00:54:40.126163",
+    "status": "published",
+    "published_at": "2026-01-10T00:54:40.128442"
   }
 ]
