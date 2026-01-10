@@ -70,14 +70,19 @@ class LinkInjector:
         current_product = keyword  # Default context
 
         for line in lines:
-            # Track current product context from headers (H3 and H4)
-            header_match = re.search(r'#{3,4}\s*\d*\.?\s*\*?\*?([^#\n*]+)', line)
+            # Track current product context from headers (H2, H3, H4)
+            header_match = re.search(r'#{2,4}\s*\d*\.?\s*\*?\*?([^#\n*]+)', line)
             if header_match:
                 potential_product = header_match.group(1).strip()
-                if len(potential_product) > 3:
+                if len(potential_product) > 3 and 'pick' not in potential_product.lower() and 'guide' not in potential_product.lower():
                     current_product = potential_product
 
             modified_line = line
+
+            # Convert "- Check price on Amazon" list items to links
+            if re.search(r'^-\s*Check price on Amazon\s*$', line, re.IGNORECASE):
+                url = self._make_amazon_search_url(current_product)
+                modified_line = f"- [Check price on Amazon]({url})"
 
             # First: Replace placeholder links [Check Price](#) with real Amazon links
             for pattern in self.placeholder_patterns:
