@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://budgetofficesetup.com/sitemap.xml
+Sitemap: https://www.deskdeals.ca/sitemap.xml
