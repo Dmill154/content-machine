@@ -323,5 +323,44 @@
     "created_at": "2026-01-10T02:05:25.465153",
     "status": "published",
     "published_at": "2026-01-10T02:05:25.469044"
+  },
+  {
+    "id": "ad1290491908",
+    "title": "Best Cheap Office Chair Under $150 (2023)",
+    "slug": "best-cheap-office-chair-under-150-2023",
+    "keyword": "best cheap office chair under $150",
+    "category": "desks",
+    "article_type": "roundup",
+    "meta_description": "1. Ergonomics Matter: Look for chairs with adjustable features such as height, lumbar support, and armrests to ensure you can customize the chair to your bod...",
+    "word_count": 1048,
+    "created_at": "2026-01-10T02:11:06.579577",
+    "status": "published",
+    "published_at": "2026-01-10T02:12:01.456041"
+  },
+  {
+    "id": "838087518996",
+    "title": "Herman Miller Dupe Desk Review 2025",
+    "slug": "herman-miller-dupe-desk-review-2025",
+    "keyword": "herman miller dupe desk review 2025",
+    "category": "desks",
+    "article_type": "review",
+    "meta_description": "| Rating | Pros | Cons | Best For |\n|--------|------|------|----------|\n| \u2605\u2605\u2605\u2605\u2606 (4/5) | Affordable, Sleek design, Sturdy build | Limited color options, Assem...",
+    "word_count": 1170,
+    "created_at": "2026-01-10T02:11:41.457954",
+    "status": "published",
+    "published_at": "2026-01-10T02:12:01.456056"
+  },
+  {
+    "id": "7a7b9dab0c60",
+    "title": "Best Minimalist Desks Under $50 in 2023",
+    "slug": "best-minimalist-desks-under-50-in-2023",
+    "keyword": "best minimalist desk under $50",
+    "category": "desks",
+    "article_type": "roundup",
+    "meta_description": "Q: What should I look for in a minimalist desk?  \nA: Prioritize simplicity in design, sufficient workspace, and durability. Many minimalist desks also featur...",
+    "word_count": 809,
+    "created_at": "2026-01-10T02:12:01.453179",
+    "status": "published",
+    "published_at": "2026-01-10T02:12:01.456064"
   }
 ]
