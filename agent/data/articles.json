@@ -284,5 +284,44 @@
     "created_at": "2026-01-10T01:47:43.037759",
     "status": "published",
     "published_at": "2026-01-10T01:47:43.041552"
+  },
+  {
+    "id": "ef4b6a1048bf",
+    "title": "The Best Microphone for Home Office: Elevate Your Remote Work Experience",
+    "slug": "the-best-microphone-for-home-office-elevate-your-remote-work",
+    "keyword": "best microphone for home office",
+    "category": "accessories",
+    "article_type": "listicle",
+    "meta_description": "In today's world, a well-functioning home office is essential, especially when working remotely. Poor audio quality can lead to misunderstandings during meet...",
+    "word_count": 1170,
+    "created_at": "2026-01-10T02:04:16.547249",
+    "status": "published",
+    "published_at": "2026-01-10T02:05:25.469018"
+  },
+  {
+    "id": "731adf77a128",
+    "title": "The Best Headphones for Your Home Office: Enhance Your Remote Work Experience",
+    "slug": "the-best-headphones-for-your-home-office-enhance-your-remote",
+    "keyword": "best headphones for home office",
+    "category": "accessories",
+    "article_type": "listicle",
+    "meta_description": "Working from home can be both a blessing and a challenge. While you enjoy the comfort of your own space, distractions can derail your productivity. Whether i...",
+    "word_count": 1326,
+    "created_at": "2026-01-10T02:04:47.037166",
+    "status": "published",
+    "published_at": "2026-01-10T02:05:25.469034"
+  },
+  {
+    "id": "2b48d7cc8604",
+    "title": "Essential Desk Accessories Under $75: Upgrade Your Workspace",
+    "slug": "essential-desk-accessories-under-75-upgrade-your-workspace",
+    "keyword": "desk accessories under $75",
+    "category": "accessories",
+    "article_type": "listicle",
+    "meta_description": "In today\u2019s fast-paced world, a well-organized desk can significantly enhance your productivity and comfort while working from home or in a traditional office...",
+    "word_count": 1228,
+    "created_at": "2026-01-10T02:05:25.465153",
+    "status": "published",
+    "published_at": "2026-01-10T02:05:25.469044"
   }
 ]
