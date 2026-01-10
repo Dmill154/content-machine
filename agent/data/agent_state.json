@@ -1,7 +1,7 @@
 {
-  "total_articles": 12,
+  "total_articles": 15,
   "total_revenue": 0.0,
-  "last_run": "2026-01-10T00:54:40.202115",
+  "last_run": "2026-01-10T00:58:19.540347",
   "keywords_used": [
     "best professional desk under $150",
     "best modern office chair under $75",
@@ -14,7 +14,10 @@
     "best professional monitor under $50",
     "best budget keyboard under $75",
     "best modern keyboard under $125",
-    "split keyboard review 2025"
+    "split keyboard review 2025",
+    "best cheap desk lamp 2024",
+    "best best desk lamp 2025",
+    "best desk lamp for gaming"
   ],
   "performance_history": [],
   "decisions_log": [
@@ -113,6 +116,24 @@
       "decision": "content_generation",
       "reasoning": "Generated 3 articles this cycle",
       "outcome": "Total articles now: 12"
+    },
+    {
+      "timestamp": "2026-01-10T00:57:00.581218",
+      "decision": "focus_on_categories",
+      "reasoning": "Categories ['lighting', 'organization'] have fewer articles, focusing there for balance",
+      "outcome": null
+    },
+    {
+      "timestamp": "2026-01-10T00:57:00.582598",
+      "decision": "keyword_selection",
+      "reasoning": "Selected 3 keywords based on search volume and competition",
+      "outcome": "Keywords: ['best cheap desk lamp 2024', 'best best desk lamp 2025', 'best desk lamp for gaming']"
+    },
+    {
+      "timestamp": "2026-01-10T00:58:19.431016",
+      "decision": "content_generation",
+      "reasoning": "Generated 3 articles this cycle",
+      "outcome": "Total articles now: 15"
     }
   ]
 }
