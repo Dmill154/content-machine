@@ -62,7 +62,8 @@ class SitePublisher:
     <meta name="description" content="{{ meta_description }}">
     <title>{{ title }} | {{ site_name }}</title>
     <link rel="canonical" href="{{ canonical_url }}">
-    <link rel="stylesheet" href="/css/style.css">
+    <base href="{{ base_url }}/">
+    <link rel="stylesheet" href="css/style.css">
     <!-- Google tag (gtag.js) - Replace GA_MEASUREMENT_ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
@@ -75,10 +76,10 @@ class SitePublisher:
 <body>
     <header>
         <nav>
-            <a href="/" class="logo">{{ site_name }}</a>
+            <a href="{{ base_url }}/" class="logo">{{ site_name }}</a>
             <ul>
                 {% for cat in categories %}
-                <li><a href="/{{ cat }}/">{{ cat|title }}</a></li>
+                <li><a href="{{ base_url }}/{{ cat }}/">{{ cat|title }}</a></li>
                 {% endfor %}
             </ul>
         </nav>
@@ -125,7 +126,7 @@ class SitePublisher:
     <div class="posts-grid">
         {% for article in articles[:12] %}
         <article class="post-card">
-            <a href="/{{ article.slug }}/">
+            <a href="{{ base_url }}/{{ article.slug }}/">
                 <h3>{{ article.title }}</h3>
                 <p>{{ article.meta_description[:100] }}...</p>
                 <span class="category">{{ article.category|title }}</span>
@@ -138,7 +139,7 @@ class SitePublisher:
     <h2>Browse by Category</h2>
     <div class="category-grid">
         {% for cat in categories %}
-        <a href="/{{ cat }}/" class="category-card">
+        <a href="{{ base_url }}/{{ cat }}/" class="category-card">
             <h3>{{ cat|title }}</h3>
         </a>
         {% endfor %}
@@ -155,7 +156,7 @@ class SitePublisher:
     <div class="posts-grid">
         {% for article in articles %}
         <article class="post-card">
-            <a href="/{{ article.slug }}/">
+            <a href="{{ base_url }}/{{ article.slug }}/">
                 <h3>{{ article.title }}</h3>
                 <p>{{ article.meta_description[:100] }}...</p>
             </a>
@@ -486,9 +487,11 @@ footer {
         categories = self.config['niche']['categories']
 
         # Common template context
+        base_url = self.config['site']['base_url'].rstrip('/')
         common_context = {
             'site_name': self.config['site']['name'],
             'site_tagline': self.config['site']['tagline'],
+            'base_url': base_url,
             'categories': categories,
             'year': datetime.now().year,
         }
