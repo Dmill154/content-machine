@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="category-page">
+    <h1>{{ category|title }}</h1>
+    <p>Browse our {{ category }} guides and reviews.</p>
+    <div class="posts-grid">
+        {% for article in articles %}
+        <article class="post-card">
+            <a href="{{ base_url }}/{{ article.slug }}/">
+                <h3>{{ article.title }}</h3>
+                <p>{{ article.meta_description[:100] }}...</p>
+            </a>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
