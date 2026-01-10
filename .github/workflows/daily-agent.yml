@@ -7,6 +7,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   run-agent:
@@ -30,10 +32,17 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python orchestrator.py
 
-      - name: Commit and push generated content
+      - name: Commit generated content
         run: |
           git config user.email "agent@autonomous-bot.com"
           git config user.name "Autonomous Agent"
           git add -A
           git diff --staged --quiet || git commit -m "Auto-generated content $(date +'%Y-%m-%d')"
           git push
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./agent/site/public
+          publish_branch: gh-pages
