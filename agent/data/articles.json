@@ -115,5 +115,44 @@
     "created_at": "2026-01-10T08:22:21.073781",
     "status": "published",
     "published_at": "2026-01-10T08:22:21.077767"
+  },
+  {
+    "id": "0828cc3a08e8",
+    "title": "Best Budget Keyboard Under $200 in 2026",
+    "slug": "best-budget-keyboard-under-200-in-2026",
+    "keyword": "best budget keyboard under $200",
+    "category": "keyboards",
+    "article_type": "roundup",
+    "meta_description": "| Price Tier       | Product Name                             | Key Features                                         |\n|------------------|------------------...",
+    "word_count": 1249,
+    "created_at": "2026-01-11T08:21:33.425051",
+    "status": "published",
+    "published_at": "2026-01-11T08:22:38.609706"
+  },
+  {
+    "id": "eaa6bcb3c81c",
+    "title": "Best Cheap Keyboard Under $150 in 2026",
+    "slug": "best-cheap-keyboard-under-150-in-2026",
+    "keyword": "best cheap keyboard under $150",
+    "category": "keyboards",
+    "article_type": "roundup",
+    "meta_description": "| Product Name                      | Price Range     | Key Features                         |\n|-----------------------------------|-----------------|-------...",
+    "word_count": 1079,
+    "created_at": "2026-01-11T08:22:01.631652",
+    "status": "published",
+    "published_at": "2026-01-11T08:22:38.609747"
+  },
+  {
+    "id": "03b6c53f0739",
+    "title": "Split Keyboard Review 2025: A Comprehensive Assessment for 2026",
+    "slug": "split-keyboard-review-2025-a-comprehensive-assessment-for-20",
+    "keyword": "split keyboard review 2025",
+    "category": "keyboards",
+    "article_type": "review",
+    "meta_description": "Rating: \u2605\u2605\u2605\u2605\u2606 (4/5)  \nPros:  \n- Ergonomic design reduces wrist strain  \n- Customizable keys and layouts  \n- Wireless connectivity options  \n- Lightweight and...",
+    "word_count": 1278,
+    "created_at": "2026-01-11T08:22:38.605602",
+    "status": "published",
+    "published_at": "2026-01-11T08:22:38.609758"
   }
 ]
