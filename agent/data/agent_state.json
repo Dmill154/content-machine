@@ -1,7 +1,7 @@
 {
-  "total_articles": 12,
+  "total_articles": 15,
   "total_revenue": 0.0,
-  "last_run": "2026-01-11T08:22:38.766581",
+  "last_run": "2026-01-12T08:27:15.914082",
   "keywords_used": [
     "best budget office chair under $150",
     "best minimalist office chair under $200",
@@ -14,7 +14,10 @@
     "wireless vs wired keyboard 2024",
     "best budget keyboard under $200",
     "best cheap keyboard under $150",
-    "split keyboard review 2025"
+    "split keyboard review 2025",
+    "best minimalist desk lamp 2025",
+    "led desk light under $100",
+    "desk drawer organizer review"
   ],
   "performance_history": [],
   "decisions_log": [
@@ -110,6 +113,30 @@
     },
     {
       "timestamp": "2026-01-11T08:22:38.765684",
+      "decision": "promotion_cycle",
+      "reasoning": "Submitted sitemaps to search engines for indexing",
+      "outcome": "Google: False, Bing: False"
+    },
+    {
+      "timestamp": "2026-01-12T08:25:41.647917",
+      "decision": "focus_on_categories",
+      "reasoning": "Categories ['lighting', 'organization'] have fewer articles, focusing there for balance",
+      "outcome": null
+    },
+    {
+      "timestamp": "2026-01-12T08:25:41.649275",
+      "decision": "keyword_selection",
+      "reasoning": "Selected 3 keywords based on search volume and competition",
+      "outcome": "Keywords: ['best minimalist desk lamp 2025', 'led desk light under $100', 'desk drawer organizer review']"
+    },
+    {
+      "timestamp": "2026-01-12T08:27:15.669828",
+      "decision": "content_generation",
+      "reasoning": "Generated 3 articles this cycle",
+      "outcome": "Total articles now: 15"
+    },
+    {
+      "timestamp": "2026-01-12T08:27:15.913181",
       "decision": "promotion_cycle",
       "reasoning": "Submitted sitemaps to search engines for indexing",
       "outcome": "Google: False, Bing: False"
