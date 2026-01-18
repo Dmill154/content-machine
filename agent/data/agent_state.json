@@ -1,7 +1,7 @@
 {
-  "total_articles": 30,
+  "total_articles": 33,
   "total_revenue": 0.0,
-  "last_run": "2026-01-17T08:22:00.291688",
+  "last_run": "2026-01-18T08:22:30.272031",
   "keywords_used": [
     "best budget office chair under $150",
     "best minimalist office chair under $200",
@@ -32,7 +32,10 @@
     "flexispot chair review 2025",
     "best budget monitor under $100",
     "best budget monitor 2025",
-    "best modern office chair under $100"
+    "best modern office chair under $100",
+    "best compact keyboard under $250",
+    "best best monitor under $200",
+    "best minimalist keyboard under $150"
   ],
   "performance_history": [],
   "decisions_log": [
@@ -272,6 +275,30 @@
     },
     {
       "timestamp": "2026-01-17T08:22:00.290641",
+      "decision": "promotion_cycle",
+      "reasoning": "Submitted sitemaps to search engines for indexing",
+      "outcome": "Google: False, Bing: False"
+    },
+    {
+      "timestamp": "2026-01-18T08:21:09.010502",
+      "decision": "focus_on_categories",
+      "reasoning": "Categories ['monitors', 'keyboards'] have fewer articles, focusing there for balance",
+      "outcome": null
+    },
+    {
+      "timestamp": "2026-01-18T08:21:09.011815",
+      "decision": "keyword_selection",
+      "reasoning": "Selected 3 keywords based on search volume and competition",
+      "outcome": "Keywords: ['best compact keyboard under $250', 'best best monitor under $200', 'best minimalist keyboard under $150']"
+    },
+    {
+      "timestamp": "2026-01-18T08:22:29.680721",
+      "decision": "content_generation",
+      "reasoning": "Generated 3 articles this cycle",
+      "outcome": "Total articles now: 33"
+    },
+    {
+      "timestamp": "2026-01-18T08:22:30.270913",
       "decision": "promotion_cycle",
       "reasoning": "Submitted sitemaps to search engines for indexing",
       "outcome": "Google: False, Bing: False"

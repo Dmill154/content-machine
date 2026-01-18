@@ -388,5 +388,44 @@
     "created_at": "2026-01-17T08:21:59.746924",
     "status": "published",
     "published_at": "2026-01-17T08:21:59.750921"
+  },
+  {
+    "id": "65df798eb9cc",
+    "title": "Best Compact Keyboards Under $250 in 2026",
+    "slug": "best-compact-keyboards-under-250-in-2026",
+    "keyword": "best compact keyboard under $250",
+    "category": "monitors",
+    "article_type": "roundup",
+    "meta_description": "| Product Name                       | Price Range | Key Features                                      |\n|------------------------------------|-------------|...",
+    "word_count": 1248,
+    "created_at": "2026-01-18T08:21:36.633613",
+    "status": "published",
+    "published_at": "2026-01-18T08:22:29.682193"
+  },
+  {
+    "id": "49b6c5822dca",
+    "title": "Best Monitors Under $200 in 2026",
+    "slug": "best-monitors-under-200-in-2026",
+    "keyword": "best best monitor under $200",
+    "category": "monitors",
+    "article_type": "roundup",
+    "meta_description": "| Product Name                         | Price Range  | Key Features                               |\n|-------------------------------------|--------------|--...",
+    "word_count": 1178,
+    "created_at": "2026-01-18T08:22:05.766216",
+    "status": "published",
+    "published_at": "2026-01-18T08:22:29.682207"
+  },
+  {
+    "id": "3d8b7e35c841",
+    "title": "Best Minimalist Keyboard Under $150 in 2026",
+    "slug": "best-minimalist-keyboard-under-150-in-2026",
+    "keyword": "best minimalist keyboard under $150",
+    "category": "monitors",
+    "article_type": "roundup",
+    "meta_description": "| Product Name                          | Price Range   | Key Features                        |\n|---------------------------------------|---------------|----...",
+    "word_count": 872,
+    "created_at": "2026-01-18T08:22:29.678836",
+    "status": "published",
+    "published_at": "2026-01-18T08:22:29.682215"
   }
 ]
